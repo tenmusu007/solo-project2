@@ -1,0 +1,38 @@
+body{
+    background-color: rgba(4, 118, 42, 0.953);
+}
+p{
+    margin: 0;
+}
+.box-1{
+    text-align: center;
+        h1{
+            color: yellowgreen;
+
+        }
+        .result{
+            padding: 20px;
+            font-size: 50px;
+        }
+        p{
+            color: #fff;
+            font-size: 20px;
+            padding: 40px;
+        }
+        .button-box{
+            padding:40px;
+        }
+        .hit,.stand{
+            background-color: rgba(204, 119, 119, 0.679);
+            border: 1px solid;
+            font-size: 40px;
+            border-radius: 15%;
+        }
+        .hit:hover{
+            opacity: 0.6;
+        }
+        .stand:hover{
+            opacity: 0.6;
+        }
+        
+}
