@@ -1,6 +1,9 @@
 "use stircit"
-let cards = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-let dcards =[1,2,3,4,5,6,7,8,9,10,11,12,13]
+// let cards = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+// let dcards =[1,2,3,4,5,6,7,8,9,10,11,12,13]
+let cards = []
+let dcards =[]
+let K = 13
 let hands = cards.length
 let sum = 0
 let dealersum = 0
@@ -49,16 +52,24 @@ function skipCard(){
         dealersum += dcard
         dcards.push(dcard)
         godealaer()
-    }else if(nodrawCard ===true){
-        message ="You Lose"
-    }else if(drawCard === false){
-        message ="You win"
+    }else if(nodrawCard ===true && drawCard ===false){
+        message ="You Lose1"
+    }else if(drawCard === false ){
+        comparison()
     }
     resultEl.textContent = message
 }
+function comparison(){
+    if(dealersum > sum){
+        message = "You lose3"
+    }else{
+        message = "You Win"
+    }
+    resultEl.textContent =message
+}
 
 function getRandomCard() {
-    let randomNumber = Math.floor( Math.random()*hands )+ 1
+    let randomNumber = Math.floor( Math.random()*13 )+ 1
     if (randomNumber > 11){
         return 10
     }else{
