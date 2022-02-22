@@ -13,13 +13,15 @@
         <div class="result" id="result-el">
             Let's start
         </div>
-        <p>Dealer</p>
+        <div class="dealer">Dealer</div>
         <p id="dealer-el"></p>
-        <p>Player card</p>
+        <p id="dealersum-el"></p>
+        <div class="player">Player card</div>
         <p id="player-el"></p>
         <p id="sum-el"></p>
         <div class="button-box">
-            <button class="hit" onclick="drawCard()">Hit</button>
+            <button class="start" onclick="startCard();dealerStart()">Start</button>
+            <button class="hit" onclick="newCard()">Hit</button>
             <button class="stand" onclick="skipCard()">stand</button>
         </div>
     </div>

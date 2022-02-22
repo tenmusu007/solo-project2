@@ -14,19 +14,27 @@ p{
             padding: 20px;
             font-size: 50px;
         }
+        .player,.dealer{
+            font-size: 35px;
+            color: #fff;
+            font-style: italic;
+        }
         p{
             color: #fff;
-            font-size: 20px;
-            padding: 30px;
+            font-size: 30px;
+            padding: 20px;
         }
         .button-box{
-            padding:40px;
+            padding:30px;
         }
-        .hit,.stand{
+        .start,.hit,.stand{
             background-color: rgba(204, 119, 119, 0.679);
             border: 1px solid;
             font-size: 40px;
             border-radius: 15%;
+        }
+        .start:hover{
+            opacity: 0.6;
         }
         .hit:hover{
             opacity: 0.6;
