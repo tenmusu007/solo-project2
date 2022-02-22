@@ -51,7 +51,12 @@ function skipCard(){
         dealersum += dcard
         dcards.push(dcard)
         godealaer()
+    }else if(nodrawCard ===true){
+        message ="You Lose"
+    }else if(drawCard === false){
+        message ="You win"
     }
+    resultEl.textContent = message
 }
 
 function getRandomCard() {
