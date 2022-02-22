@@ -5,6 +5,8 @@ let sum = 0
 let dealersum = 0
 let isAlive = true
 let hasBlackJack = false
+let drawCard = true
+let nodrawCard = false
 let message = " "
 let dealerEl = document.getElementById("dealer-el")
 let dealersumEl = document.getElementById("dealersum-el")
@@ -15,12 +17,10 @@ let sumEl = document.getElementById("sum-el")
 function dealerStart(){
     drawCard = true
     let dealercard1 = getRandomDealerCard()
-    let dealercard2 = getRandomDealerCard()
-    dcards = [dealercard1,dealercard2]
-    dealersum = dealercard1 + dealercard2
+    dcards = [dealercard1]
+    dealersum = dealercard1
     godealaer()
 }
-
 function getRandomDealerCard() {
     let randomNumber = Math.floor( Math.random()*13 )+ 1
     if (randomNumber > 10){
@@ -31,22 +31,19 @@ function getRandomDealerCard() {
         return randomNumber
     }
 }
+
 function godealaer(){
     dealerEl.textContent = "Cards: "
     for(let i  =0; i < dcards.length; i ++){
         dealerEl.textContent +=dcards[i] + " "
     }
-    
     dealersumEl.textContent = "Sum: " + dealersum
     if(dealersum < 17){
-        drawCard = true
     }else if(dealersum ===21){
-        message = "Dealer's got BlackJack"
-        nodrawCard = false
+        nodrawCard = true
     }else{
-        nodrawCard = false
+        drawCard = false
     }
-    resultEl.textContent = message
 }
 function skipCard(){
     if(drawCard ===true && nodrawCard ===false){
@@ -89,6 +86,7 @@ function renderGame(){
         message = "You've got Blackjack"
         hasBlackJack = true
     }else{
+        message = "You're out of the game. You lose"
         isAlive = false
     }
     resultEl.textContent = message
