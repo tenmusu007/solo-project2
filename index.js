@@ -1,6 +1,7 @@
 "use stircit"
-let cards = []
-let dcards =[]
+let cards = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+let dcards =[1,2,3,4,5,6,7,8,9,10,11,12,13]
+let hands = cards.length
 let sum = 0
 let dealersum = 0
 let isAlive = true
@@ -23,15 +24,12 @@ function dealerStart(){
 }
 function getRandomDealerCard() {
     let randomNumber = Math.floor( Math.random()*13 )+ 1
-    if (randomNumber > 10){
+    if (randomNumber >11 ){
         return 10
-    } else if (randomNumber === 1){
-        return 11
-    } else {
+    } else{
         return randomNumber
-    }
+    } 
 }
-
 function godealaer(){
     dealerEl.textContent = "Cards: "
     for(let i  =0; i < dcards.length; i ++){
@@ -60,14 +58,12 @@ function skipCard(){
 }
 
 function getRandomCard() {
-    let randomNumber = Math.floor( Math.random()*13 )+ 1
-    if (randomNumber > 10){
+    let randomNumber = Math.floor( Math.random()*hands )+ 1
+    if (randomNumber > 11){
         return 10
-    } else if (randomNumber === 1){
-        return 11
-    } else {
+    }else{
         return randomNumber
-    }
+    } 
 }
 function startCard(){
         isAlive = true
