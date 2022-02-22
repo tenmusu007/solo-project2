@@ -55,6 +55,7 @@ p {
   border: 1px solid;
   font-size: 40px;
   border-radius: 15%;
+  color: black;
 }
 .box-1 .start:hover {
   opacity: 0.6;
