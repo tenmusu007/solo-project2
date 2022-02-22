@@ -16,19 +16,27 @@ p {
   padding: 20px;
   font-size: 50px;
 }
+.box-1 .player, .box-1 .dealer {
+  font-size: 35px;
+  color: #fff;
+  font-style: italic;
+}
 .box-1 p {
   color: #fff;
-  font-size: 20px;
-  padding: 30px;
+  font-size: 30px;
+  padding: 20px;
 }
 .box-1 .button-box {
-  padding: 40px;
+  padding: 30px;
 }
-.box-1 .hit, .box-1 .stand {
+.box-1 .start, .box-1 .hit, .box-1 .stand {
   background-color: rgba(204, 119, 119, 0.679);
   border: 1px solid;
   font-size: 40px;
   border-radius: 15%;
+}
+.box-1 .start:hover {
+  opacity: 0.6;
 }
 .box-1 .hit:hover {
   opacity: 0.6;

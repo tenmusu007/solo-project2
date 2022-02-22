@@ -1,13 +1,61 @@
 "use stircit"
-let sum = 0
 let cards = []
+let dcards =[]
+let sum = 0
+let dealersum = 0
 let isAlive = true
-let hasBlackJacl = false
+let hasBlackJack = false
 let message = " "
 let dealerEl = document.getElementById("dealer-el")
+let dealersumEl = document.getElementById("dealersum-el")
 let playerEl = document.getElementById("player-el")
 let resultEl = document.getElementById("result-el")
 let sumEl = document.getElementById("sum-el")
+
+function dealerStart(){
+    drawCard = true
+    let dealercard1 = getRandomDealerCard()
+    let dealercard2 = getRandomDealerCard()
+    dcards = [dealercard1,dealercard2]
+    dealersum = dealercard1 + dealercard2
+    godealaer()
+}
+
+function getRandomDealerCard() {
+    let randomNumber = Math.floor( Math.random()*13 )+ 1
+    if (randomNumber > 10){
+        return 10
+    } else if (randomNumber === 1){
+        return 11
+    } else {
+        return randomNumber
+    }
+}
+function godealaer(){
+    dealerEl.textContent = "Cards: "
+    for(let i  =0; i < dcards.length; i ++){
+        dealerEl.textContent +=dcards[i] + " "
+    }
+    
+    dealersumEl.textContent = "Sum: " + dealersum
+    if(dealersum < 17){
+        drawCard = true
+    }else if(dealersum ===21){
+        message = "Dealer's got BlackJack"
+        nodrawCard = false
+    }else{
+        nodrawCard = false
+    }
+    resultEl.textContent = message
+}
+function skipCard(){
+    if(drawCard ===true && nodrawCard ===false){
+        let dcard = getRandomDealerCard()
+        dealersum += dcard
+        dcards.push(dcard)
+        godealaer()
+    }
+}
 
 function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13 )+ 1
@@ -19,7 +67,7 @@ function getRandomCard() {
         return randomNumber
     }
 }
-function drawCard(){
+function startCard(){
         isAlive = true
         let firstcard = getRandomCard()
         let secondcard = getRandomCard()
@@ -27,6 +75,7 @@ function drawCard(){
         sum = firstcard + secondcard
         renderGame()
 }
+
 function renderGame(){
     playerEl.textContent = "Cards: "
     for(let i = 0; i < cards.length; i++){
@@ -38,16 +87,14 @@ function renderGame(){
         message = "Do you want to draw a new card?"
     } else if( sum === 21){
         message = "You've got Blackjack"
-        hasBlackJacl = true
+        hasBlackJack = true
     }else{
-        message = "You're got out of the game!"
         isAlive = false
     }
     resultEl.textContent = message
 }
-
 function newCard(){
-    if (isAlive === true && hasBlackJacl ===false){
+    if (isAlive === true && hasBlackJack ===false){
         let card = getRandomCard()
         sum += card
         cards.push(card)
