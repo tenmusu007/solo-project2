@@ -1,31 +1,57 @@
 body{
     background-color: rgba(4, 118, 42, 0.953);
+    margin: 20px;
 }
 p{
     margin: 0;
 }
 .box-1{
-    text-align: center;
         h1{
-            color: yellowgreen;
+            display: flex;
+            justify-content: center;
+            color: rgb(0, 0, 0);
 
         }
         .result{
+            display: flex;
+            justify-content: center;
             padding: 20px;
             font-size: 50px;
+            color: rgb(200, 255, 0);
         }
-        .player,.dealer{
-            font-size: 35px;
-            color: #fff;
-            font-style: italic;
+        .dealer-box{
+            .dealer{
+                font-size: 35px;
+                color: #fff;
+                font-style: italic;
+                display: inline-block;
+            }
+            p{
+                display: flex;
+                justify-content: center;
+                color: #fff;
+                font-size: 30px;
+                padding: 10px;
+            }
         }
-        p{
-            color: #fff;
-            font-size: 30px;
-            padding: 20px;
+        .player-box{
+            .player{
+                font-size: 35px;
+                color: #fff;
+                font-style: italic;
+                display: inline-block;
+            }
+            p{
+                display: flex;
+                justify-content: center;
+                color: #fff;
+                font-size: 30px;
+                padding: 10px;
+            }
         }
         .button-box{
             padding:30px;
+            text-align: center;
         }
         .start,.hit,.stand{
             background-color: rgba(204, 119, 119, 0.679);
